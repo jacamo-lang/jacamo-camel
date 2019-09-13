@@ -1,0 +1,42 @@
+<routes xmlns="http://camel.apache.org/schema/spring">
+    <!-- tells agent bob "message(10)" -->
+    <route id="tellAgent">
+        <from uri="timer://foo?fixedRate=false&amp;period=100000"/>
+        <to uri='jacamo-agent:bob?content=message(10)'/>
+    </route>
+
+    <!-- asks agent marcos to unify "value(V)" with something in his BB -->
+    <route id="askAgent">
+        <from uri="timer://foo?fixedRate=false&amp;period=5000"/>
+        <to uri='jacamo-agent:marcos?performative=askOne&amp;content=value(V)&amp;msgId=20'/>
+    </route>
+
+    <!-- tells agent bob to achieve !say("done") -->
+    <route id="achieveAgent">
+        <from uri="timer://foo?fixedRate=false&amp;period=5000"/>
+        <to uri='jacamo-agent:bob?performative=achieve&amp;content=say("done")'/>
+    </route>
+
+    <!--
+    if bob is saying something, redirect it to marcos, saying its from bob
+    if its the reply from "askAgent", send the result to alice
+    else sends to bob
+    -->
+    <route id="betweenAgents">
+        <from uri="jacamo-agent:camel"/>
+        <choice>
+          <when>
+            <simple>${exchangeProperty[source]} == 'bob'</simple>
+            <to uri="jacamo-agent:marcos?source=bob"/>
+          </when>
+          <when>
+            <simple>${exchangeProperty[inReplyTo]} == '20'</simple>
+            <setProperty propertyName="content"><simple>${in.body}</simple></setProperty>
+            <to uri="jacamo-agent:alice"/>
+          </when>
+          <otherwise>
+            <to uri="jacamo-agent:bob"/>
+          </otherwise>
+        </choice>
+    </route>
+</routes>

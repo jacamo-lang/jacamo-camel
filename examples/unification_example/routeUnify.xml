@@ -1,0 +1,56 @@
+<routes xmlns="http://camel.apache.org/schema/spring" >
+  <route id="arityZero">
+    <from uri="jason:camel0?content=fixed"/>
+    <setBody>
+      <simple>sayOne(worked)</simple>
+    </setBody>
+    <to uri="jason:unifyAgent?performative=achieve"/>
+  </route>
+
+  <route id="arityOne">
+    <from uri="jason:camel1?content=perf(X)"/>
+    <setBody>
+      <simple>sayOne(${exchangeProperty[X]} )</simple>
+    </setBody>
+    <to uri="jason:unifyAgent?performative=achieve"/>
+  </route>
+
+  <route id="arityTwo">
+    <from uri="jason:camel2?content=perf(X, fixed)"/>
+    <setBody>
+      <simple>sayTwo(${exchangeProperty[X]}, good)</simple>
+    </setBody>
+    <to uri="jason:unifyAgent?performative=achieve"/>
+  </route>
+
+  <route id="arityThree">
+    <from uri="jason:camel3?content=perf(X, Y, fixed)"/>
+    <setBody>
+      <simple>sayTwo(${exchangeProperty[X]}, ${exchangeProperty[Y]})</simple>
+    </setBody>
+    <to uri="jason:unifyAgent?performative=achieve"/>
+  </route>
+
+  <route id="general">
+    <from uri="jason:camelX?content=X"/>
+    <setBody>
+      <simple>sayOne(${exchangeProperty[X]})</simple>
+    </setBody>
+    <to uri="jason:unifyAgent?performative=achieve"/>
+  </route>
+
+  <route id="list1">
+    <from uri="jason:camelL1?content=[H|T]"/>
+    <setBody>
+      <simple>sayTwo(${exchangeProperty[H]}, ${exchangeProperty[T]})</simple>
+    </setBody>
+    <to uri="jason:unifyAgent?performative=achieve"/>
+  </route>
+  <route id="list2">
+    <from uri="jason:camelL2?content=[10, A, B]"/>
+    <setBody>
+      <simple>sayTwo(${exchangeProperty[A]}, ${exchangeProperty[B]})</simple>
+    </setBody>
+    <to uri="jason:unifyAgent?performative=achieve"/>
+  </route>
+</routes>

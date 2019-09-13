@@ -1,0 +1,21 @@
+/*
+    Jason Component
+    ---------------------------
+
+    JaCaMo Project File
+
+    This file defines the initial state of the MAS (initial agents, environment, organisation, ....)
+
+    (see jacamo/doc/jcm.html for more information about what can be defined in this file)
+
+    JaCaMo 0.7
+    October 13, 2018 - 16:23:38
+*/
+
+mas plat {
+
+    agent sqlAgent
+
+    platform: jasonComponent.JasonCamel("routeSQL.xml --applicationContext.xml")
+
+}

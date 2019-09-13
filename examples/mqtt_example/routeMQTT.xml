@@ -1,0 +1,27 @@
+<routes xmlns="http://camel.apache.org/schema/spring" >
+  <route id="subscribeTwo">
+    <from uri="mqtt:client?subscribeTopicNames=camel.topic1&amp;host=tcp://0.0.0.0:1883"/>
+    <convertBodyTo type="java.lang.String"/>
+    <to uri="jason:mqttClient1?msgId=11"/>
+  </route>
+
+  <route id="subscribeOne">
+    <from uri="mqtt:client?subscribeTopicNames=camel.topic2&amp;host=tcp://0.0.0.0:1883"/>
+    <convertBodyTo type="java.lang.String"/>
+    <to uri="jason:mqttClient2?msgId=12"/>
+  </route>
+
+  <route id="publish">
+    <from uri="jason:mqttAgent"/>
+    <choice>
+      <when>
+        <simple>${in.body} starts with 'one'</simple>
+        <to uri="mqtt:sensor?host=tcp://0.0.0.0:1883&amp;publishTopicName=camel.topic1"/>
+      </when>
+      <when>
+        <simple>${in.body} starts with 'two'</simple>
+        <to uri="mqtt:sensor?host=tcp://0.0.0.0:1883&amp;publishTopicName=camel.topic2"/>
+      </when>
+    </choice>
+  </route>
+</routes>

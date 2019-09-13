@@ -1,0 +1,14 @@
+/*
+
+This example is explained in the tutorial
+
+http://jacamo.sourceforge.net/tutorial/coordination
+
+*/
+
+mas auction {
+    /* agent bob   : bob.asl */
+    agent alice   : alice.asl
+
+    platform: jacamoComponent.JacamoCamel("routes.xml")
+}

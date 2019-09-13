@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="output" path="bin/default"/>
+	<classpathentry output="bin/main" kind="src" path="src/agt">
+		<attributes>
+			<attribute name="gradle_scope" value="main"/>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8/"/>
+	<classpathentry sourcepath="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.jacamo-lang/camel-jason/1.1/177b45bc17829dc0a0d6171ab019023f5eec647c/camel-jason-1.1-sources.jar" kind="lib" path="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.jacamo-lang/camel-jason/1.1/aac39fbefc81b158de9d6a6a910331d0c531fb48/camel-jason-1.1.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.jacamo/jacamo/0.8/622b7c67a8ecebe56eb73e744d4bcf5db81b1e61/jacamo-0.8-sources.jar" kind="lib" path="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.jacamo/jacamo/0.8/d2bc53e6523ed6e7421cb632c2d06d838e0ceb8b/jacamo-0.8.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.apache.camel/camel-core/2.22.1/b7024ba196e5cffa55d538eb21c21a8aa7b1d544/camel-core-2.22.1-sources.jar" kind="lib" path="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.apache.camel/camel-core/2.22.1/7b02ce7d84cf6fd98085227411e7d867d7c7e855/camel-core-2.22.1.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.springframework/spring-context/5.0.10.RELEASE/c2ec0079b3e8cc640f4ae2647a878d5dea05f949/spring-context-5.0.10.RELEASE-sources.jar" kind="lib" path="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.springframework/spring-context/5.0.10.RELEASE/6f53de0618219fefc2aebf92ba175e6b33e14ce0/spring-context-5.0.10.RELEASE.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-log4j12/1.7.25/d6f907c4254a49f40fa46005b65bc97261ad9e46/slf4j-log4j12-1.7.25-sources.jar" kind="lib" path="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-log4j12/1.7.25/110cefe2df103412849d72ef7a67e4e91e4266b4/slf4j-log4j12-1.7.25.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/agbr/.gradle/caches/modules-2/files-2.1/guru.nidi/graphviz-java/0.7.0/de3d3491c9cddc1332ac224c5e34d57e89993008/graphviz-java-0.7.0-sources.jar" kind="lib" path="/Users/agbr/.gradle/caches/modules-2/files-2.1/guru.nidi/graphviz-java/0.7.0/f491761d6277e21963fc290777ce799262e03d78/graphviz-java-0.7.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.slf4j/jcl-over-slf4j/1.7.25/ffd0827a7c67d5915b7dc611afbda56a1f247191/jcl-over-slf4j-1.7.25-sources.jar" kind="lib" path="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.slf4j/jcl-over-slf4j/1.7.25/f8c32b13ff142a513eeb5b6330b1588dcb2c0461/jcl-over-slf4j-1.7.25.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.slf4j/jul-to-slf4j/1.7.25/bcea1530927f59b5128841d3571f879ce3af2e86/jul-to-slf4j-1.7.25-sources.jar" kind="lib" path="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.slf4j/jul-to-slf4j/1.7.25/af5364cd6679bfffb114f0dec8a157aaa283b76/jul-to-slf4j-1.7.25.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.7.25/962153db4a9ea71b79d047dfd1b2a0d80d8f4739/slf4j-api-1.7.25-sources.jar" kind="lib" path="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.7.25/da76ca59f6a57ee3102f8f9bd9cee742973efa8a/slf4j-api-1.7.25.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.jacamo/npl/0.4/f58fd046fe5e43e080a4b7d07423491e1a7412ed/npl-0.4-sources.jar" kind="lib" path="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.jacamo/npl/0.4/3192ae6658c2a32d4d09842b9367db5356edda72/npl-0.4.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.jacamo/intmas/1.0.0/d2a9bff5c612157b1b9a4270c632d3e2a67e7fbb/intmas-1.0.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.jacamo/sai/0.3/53ee62175273674710304cfc7435f320fd99cb38/sai-0.3-sources.jar" kind="lib" path="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.jacamo/sai/0.3/b469f2802096c4c0e1bc137527f6dae1f8ebe5b8/sai-0.3.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.antlr/antlr4/4.7/c48703ce958781d0ecf25b91892fea9193148965/antlr4-4.7-sources.jar" kind="lib" path="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.antlr/antlr4/4.7/cd6df46532bccabd8127c18c9ca5ef481962e931/antlr4-4.7.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/agbr/.gradle/caches/modules-2/files-2.1/net.sf.ingenias/jade/4.3/5bcf99e05d16da9a885533d3a24fd74e10f1696d/jade-4.3-sources.jar" kind="lib" path="/Users/agbr/.gradle/caches/modules-2/files-2.1/net.sf.ingenias/jade/4.3/2cf02ba26058230c72da969100a3c2e2e7f06628/jade-4.3.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.apache.ant/ant/1.10.5/633d7a3e3eccca94ed390e08a6811f97ca6f004c/ant-1.10.5-sources.jar" kind="lib" path="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.apache.ant/ant/1.10.5/4a48332c2df6f535d9dd9d904cd780ab26266e20/ant-1.10.5.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.jason-lang/jason/2.4/945b36241991fc288c392049641ccb5c6a342ccc/jason-2.4-sources.jar" kind="lib" path="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.jason-lang/jason/2.4/568a0d36dbb854c1f7f1733f060e5e91690df5a/jason-2.4.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.jacamo/cartago/2.4/d74cc892a80a1bcc14700ab60c280712ee2febcf/cartago-2.4.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.jacamo/jaca/2.4/cb7e7018e457850e0b43a398bdda4604492b3b6e/jaca-2.4.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.jacamo/moise/0.12/d5c0062de2643f88e9a333788dc3d72334239ac8/moise-0.12-sources.jar" kind="lib" path="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.jacamo/moise/0.12/45b7d6292b20a492cd636333591d2d82c853dd13/moise-0.12.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/agbr/.gradle/caches/modules-2/files-2.1/com.sun.xml.bind/jaxb-core/2.3.0.1/7caea34258154d7264652b8f049409634819d663/jaxb-core-2.3.0.1-sources.jar" kind="lib" path="/Users/agbr/.gradle/caches/modules-2/files-2.1/com.sun.xml.bind/jaxb-core/2.3.0.1/23574ca124d0a694721ce3ef13cd720095f18fdd/jaxb-core-2.3.0.1.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/agbr/.gradle/caches/modules-2/files-2.1/com.sun.xml.bind/jaxb-impl/2.3.0.1/27a6596f544184d2129f057027fda440b49410b3/jaxb-impl-2.3.0.1-sources.jar" kind="lib" path="/Users/agbr/.gradle/caches/modules-2/files-2.1/com.sun.xml.bind/jaxb-impl/2.3.0.1/2e979dabb3e5e74a0686115075956391a14dece8/jaxb-impl-2.3.0.1.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.springframework/spring-aop/5.0.10.RELEASE/108554af6ccc431713cf051cd19a19966820b1bc/spring-aop-5.0.10.RELEASE-sources.jar" kind="lib" path="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.springframework/spring-aop/5.0.10.RELEASE/da65874f61aef9c25db794f493e50683346d3056/spring-aop-5.0.10.RELEASE.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.springframework/spring-beans/5.0.10.RELEASE/d0b8fcd9ddd75212bb7a1bd750ef1ffd597c1bd8/spring-beans-5.0.10.RELEASE-sources.jar" kind="lib" path="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.springframework/spring-beans/5.0.10.RELEASE/8ec7da928082a123c50d5d70cd4b46382db27e8b/spring-beans-5.0.10.RELEASE.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.springframework/spring-expression/5.0.10.RELEASE/5c63f3af19aca6e284e502c6976962b3b8124504/spring-expression-5.0.10.RELEASE-sources.jar" kind="lib" path="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.springframework/spring-expression/5.0.10.RELEASE/eaf8595e3bf18ef1aca1c233d9871552d258e38a/spring-expression-5.0.10.RELEASE.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.springframework/spring-core/5.0.10.RELEASE/3c2efb6162167eba179f797eea51d6dac43a87d/spring-core-5.0.10.RELEASE-sources.jar" kind="lib" path="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.springframework/spring-core/5.0.10.RELEASE/cb270a60ceb573961588f511222984de64b4bc96/spring-core-5.0.10.RELEASE.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/agbr/.gradle/caches/modules-2/files-2.1/log4j/log4j/1.2.17/677abe279b68c5e7490d6d50c6951376238d7d3e/log4j-1.2.17-sources.jar" kind="lib" path="/Users/agbr/.gradle/caches/modules-2/files-2.1/log4j/log4j/1.2.17/5af35056b4d257e4b64b9e8069c0746e8b08629f/log4j-1.2.17.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/agbr/.gradle/caches/modules-2/files-2.1/javax.xml.bind/jaxb-api/2.1/6ce58f6598e763a7f3180ef3a747332695cdd86f/jaxb-api-2.1-sources.jar" kind="lib" path="/Users/agbr/.gradle/caches/modules-2/files-2.1/javax.xml.bind/jaxb-api/2.1/d68570e722cffe2000358ce9c661a0b0bf1ebe11/jaxb-api-2.1.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.springframework/spring-jcl/5.0.10.RELEASE/b2525baf5a7f563eeea02c592fd188577454e14f/spring-jcl-5.0.10.RELEASE-sources.jar" kind="lib" path="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.springframework/spring-jcl/5.0.10.RELEASE/8d6a766be91ae5613f2828eb9f77739a47ceb357/spring-jcl-5.0.10.RELEASE.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/agbr/.gradle/caches/modules-2/files-2.1/javax.xml.stream/stax-api/1.0-2/dd58a0151c110e27c6c18abd45b01792f46d3fcd/stax-api-1.0-2-sources.jar" kind="lib" path="/Users/agbr/.gradle/caches/modules-2/files-2.1/javax.xml.stream/stax-api/1.0-2/d6337b0de8b25e53e81b922352fbea9f9f57ba0b/stax-api-1.0-2.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/agbr/.gradle/caches/modules-2/files-2.1/javax.activation/activation/1.1/3697e9f67a2ed7ac5f589cff30f21173299440/activation-1.1-sources.jar" kind="lib" path="/Users/agbr/.gradle/caches/modules-2/files-2.1/javax.activation/activation/1.1/e6cb541461c2834bdea3eb920f1884d1eb508b50/activation-1.1.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.antlr/antlr4-runtime/4.7/47651ddc6b58d2718afef967f24a1c57c8fe639e/antlr4-runtime-4.7-sources.jar" kind="lib" path="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.antlr/antlr4-runtime/4.7/30b13b7efc55b7feea667691509cf59902375001/antlr4-runtime-4.7.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.antlr/ST4/4.0.8/6f23134f1c98dfce77f85defda31bfbce3e2a4ac/ST4-4.0.8-sources.jar" kind="lib" path="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.antlr/ST4/4.0.8/a1c55e974f8a94d78e2348fa6ff63f4fa1fae64/ST4-4.0.8.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.antlr/antlr-runtime/3.5.2/5214ea45dd20d3a2e4caa6f1ad2248ad107e0daf/antlr-runtime-3.5.2-sources.jar" kind="lib" path="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.antlr/antlr-runtime/3.5.2/cd9cd41361c155f3af0f653009dcecb08d8b4afd/antlr-runtime-3.5.2.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.abego.treelayout/org.abego.treelayout.core/1.0.3/98d31576a54fd48dabf1fcf67a311dd9f0e4f66e/org.abego.treelayout.core-1.0.3-sources.jar" kind="lib" path="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.abego.treelayout/org.abego.treelayout.core/1.0.3/457216e8e6578099ae63667bb1e4439235892028/org.abego.treelayout.core-1.0.3.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.glassfish/javax.json/1.0.4/ef782abad0d3f1d30644c4023a6bbc6fe371e23a/javax.json-1.0.4-sources.jar" kind="lib" path="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.glassfish/javax.json/1.0.4/3178f73569fd7a1e5ffc464e680f7a8cc784b85a/javax.json-1.0.4.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/agbr/.gradle/caches/modules-2/files-2.1/com.ibm.icu/icu4j/58.2/51044f805e9d7383fdc9f6f5b4c16846e43a499c/icu4j-58.2-sources.jar" kind="lib" path="/Users/agbr/.gradle/caches/modules-2/files-2.1/com.ibm.icu/icu4j/58.2/db9fd4b4c189cf1518db14c67d14a2cfcfbe59f6/icu4j-58.2.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.apache.ant/ant-launcher/1.10.5/24f352f6f2e37deb23802cab6a1dd857fb77625c/ant-launcher-1.10.5-sources.jar" kind="lib" path="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.apache.ant/ant-launcher/1.10.5/e84c8cf7b0cbac5ef101cf56ff8d439fa77e36c2/ant-launcher-1.10.5.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-rasterizer/1.10/9f9853b9efbd07d34ca97c9a8aaec7752629bbf2/batik-rasterizer-1.10-sources.jar" kind="lib" path="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-rasterizer/1.10/21784e4d91d22a6dbec11ae3d6867e316a3d4276/batik-rasterizer-1.10.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-svgrasterizer/1.10/e90d56504dc9dbc6cb648eb3d7add9763a13bcba/batik-svgrasterizer-1.10-sources.jar" kind="lib" path="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-svgrasterizer/1.10/df63334c6f242d77a67ebd5c140bc8c4f2b37126/batik-svgrasterizer-1.10.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-codec/1.10/36e3b1d8c122a00b764cc805ccce56af580eaac6/batik-codec-1.10-sources.jar" kind="lib" path="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-codec/1.10/c45741fdde905465a3c008aa7473b2a4a213c7c1/batik-codec-1.10.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-transcoder/1.10/24ef8e38cac9a9cd6bafc43b2e772c052712a7c4/batik-transcoder-1.10-sources.jar" kind="lib" path="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-transcoder/1.10/66d3c8025f50c77834ff4bb09055278fe95070fa/batik-transcoder-1.10.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-bridge/1.10/a2f70bfbfcc3cf756402487c25fe49bb17fb3b44/batik-bridge-1.10-sources.jar" kind="lib" path="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-bridge/1.10/53cdf9504d1eefe0ee3bcf616a882d5a2b93ffd4/batik-bridge-1.10.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-script/1.10/199e2b68a5eaeaa656d3d8963203d04818ab4db7/batik-script-1.10-sources.jar" kind="lib" path="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-script/1.10/76c0790c695c9cec110163aef89f1de05c5d0a96/batik-script-1.10.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-anim/1.10/806fbeae031125537bfbc3d21b091513950d3758/batik-anim-1.10-sources.jar" kind="lib" path="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-anim/1.10/e301c476768a53a33ec473b265fbdceb45dce464/batik-anim-1.10.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-svg-dom/1.10/16a55199ad002c03e50d7896766bca4328e4cec6/batik-svg-dom-1.10-sources.jar" kind="lib" path="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-svg-dom/1.10/98b083931c3a9d3fa4b544ea927940689899eb5e/batik-svg-dom-1.10.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-parser/1.10/25648288c0c0d3b7f8962ffb187a71095928ebfc/batik-parser-1.10-sources.jar" kind="lib" path="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-parser/1.10/afe740ee774eb7f94a3f9ae056724dff0d84d7e1/batik-parser-1.10.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-gvt/1.10/7ddf15bad10839a32400121b3756b3f2c8a846b8/batik-gvt-1.10-sources.jar" kind="lib" path="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-gvt/1.10/7091974abb3f57141f29aa94d2fbf8a06d22f837/batik-gvt-1.10.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-svggen/1.10/9db528b5e5b7758163278a7d89451c088ebe8373/batik-svggen-1.10-sources.jar" kind="lib" path="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-svggen/1.10/1657ee1418304ade24a213e028d89a18e9dec13b/batik-svggen-1.10.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-awt-util/1.10/3c536f5b8584f271a98d7b3baccd3023c06ac943/batik-awt-util-1.10-sources.jar" kind="lib" path="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-awt-util/1.10/32712076ffee3eb533bc32f45f5c4b3f25b82749/batik-awt-util-1.10.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-dom/1.10/2eac55be159b9412859e820f09ee6d3c706b80e2/batik-dom-1.10-sources.jar" kind="lib" path="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-dom/1.10/5f94e491f3b4653c834201dcb36fa7b2169a4af9/batik-dom-1.10.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-css/1.10/dfb5187a13d176bda919ca3490d57116772ac1a3/batik-css-1.10-sources.jar" kind="lib" path="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-css/1.10/a1b95b2fc81d2089a089e2bb1c143b743cd0eb26/batik-css-1.10.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/xmlgraphics-commons/2.3/8d9ad675fb4b506722fa5171f1a9586c7229463e/xmlgraphics-commons-2.3-sources.jar" kind="lib" path="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/xmlgraphics-commons/2.3/f0b77d80c4d8f02538512b4d505af0cf5286eb7f/xmlgraphics-commons-2.3.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/agbr/.gradle/caches/modules-2/files-2.1/commons-io/commons-io/2.6/2566800dc841d9d2c5a0d34d807e45d4107dbbdf/commons-io-2.6-sources.jar" kind="lib" path="/Users/agbr/.gradle/caches/modules-2/files-2.1/commons-io/commons-io/2.6/815893df5f31da2ece4040fe0a12fd44b577afaf/commons-io-2.6.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/agbr/.gradle/caches/modules-2/files-2.1/net.arnx/nashorn-promise/0.1.1/96cc495e4bb583382894e4f69e7d46305fc02f90/nashorn-promise-0.1.1-sources.jar" kind="lib" path="/Users/agbr/.gradle/caches/modules-2/files-2.1/net.arnx/nashorn-promise/0.1.1/3bae6bc4b167e0866dfb29aa9ff09ba55c6f0a52/nashorn-promise-0.1.1.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/agbr/.gradle/caches/modules-2/files-2.1/com.eclipsesource.j2v8/j2v8_macosx_x86_64/4.6.0/70fa3b2e113fb13a4515a981b857a4a6575aeb22/j2v8_macosx_x86_64-4.6.0-sources.jar" kind="lib" path="/Users/agbr/.gradle/caches/modules-2/files-2.1/com.eclipsesource.j2v8/j2v8_macosx_x86_64/4.6.0/863d30016246f6d7356c88eaf36c3e924a2ffd3c/j2v8_macosx_x86_64-4.6.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-exec/1.3/efd2543e352e55ce5a685eed6db8af028b737905/commons-exec-1.3-sources.jar" kind="lib" path="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-exec/1.3/8dfb9facd0830a27b1b5f29f84593f0aeee7773b/commons-exec-1.3.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/agbr/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.2/b19b5927c2c25b6c70f093767041e641ae0b1b35/jsr305-3.0.2-sources.jar" kind="lib" path="/Users/agbr/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.2/25ea2e8b0c338a877313bd4672d3fe056ea78f0d/jsr305-3.0.2.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-xml/1.10/c74f33e0efebf907e520059ebac2ae2d5692b7e1/batik-xml-1.10-sources.jar" kind="lib" path="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-xml/1.10/601a184d2e363e0900eeec3617e62a3162a6fe37/batik-xml-1.10.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-util/1.10/87f316c0c3d6922ab02695d9a82db80a7ab3b7dc/batik-util-1.10-sources.jar" kind="lib" path="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-util/1.10/f40a4624616047c86f4bc80c985426afff964975/batik-util-1.10.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/Users/agbr/.gradle/caches/modules-2/files-2.1/xml-apis/xml-apis-ext/1.3.04/41a8b86b358e87f3f13cf46069721719105aff66/xml-apis-ext-1.3.04.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-constants/1.10/a2325998f61600f6d3ea366f11d5ec364951dcc5/batik-constants-1.10-sources.jar" kind="lib" path="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-constants/1.10/53079777c80f005c10cc4837e9d3c90ad890f1a1/batik-constants-1.10.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-i18n/1.10/1c4bf7945bf5d1f03aaa8788c89bf4dbbb2cdc20/batik-i18n-1.10-sources.jar" kind="lib" path="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-i18n/1.10/14923525d8c01b3cbfa9d340c0d2bf315a85b3f0/batik-i18n-1.10.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/agbr/.gradle/caches/modules-2/files-2.1/commons-logging/commons-logging/1.0.4/8d3424a318e818f88568dfb3b55c58583364ba9/commons-logging-1.0.4-sources.jar" kind="lib" path="/Users/agbr/.gradle/caches/modules-2/files-2.1/commons-logging/commons-logging/1.0.4/f029a2aefe2b3e1517573c580f948caac31b1056/commons-logging-1.0.4.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-ext/1.10/8728355ae5e9ed874712ffddcb1567dbbc4c4a0d/batik-ext-1.10-sources.jar" kind="lib" path="/Users/agbr/.gradle/caches/modules-2/files-2.1/org.apache.xmlgraphics/batik-ext/1.10/23a27a446965644ff5593dab2003221936ca2499/batik-ext-1.10.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/agbr/.gradle/caches/modules-2/files-2.1/xalan/xalan/2.7.2/fe9c3d37a49238fac9d4d6c4f5bbd8c334da787a/xalan-2.7.2-sources.jar" kind="lib" path="/Users/agbr/.gradle/caches/modules-2/files-2.1/xalan/xalan/2.7.2/d55d3f02a56ec4c25695fe67e1334ff8c2ecea23/xalan-2.7.2.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/agbr/.gradle/caches/modules-2/files-2.1/xalan/serializer/2.7.2/fe9c3d37a49238fac9d4d6c4f5bbd8c334da787a/serializer-2.7.2-sources.jar" kind="lib" path="/Users/agbr/.gradle/caches/modules-2/files-2.1/xalan/serializer/2.7.2/24247f3bb052ee068971393bdb83e04512bb1c3c/serializer-2.7.2.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/agbr/.gradle/caches/modules-2/files-2.1/xml-apis/xml-apis/1.3.04/d89105ccbe3fd823865330fd964233baf2b53e88/xml-apis-1.3.04-sources.jar" kind="lib" path="/Users/agbr/.gradle/caches/modules-2/files-2.1/xml-apis/xml-apis/1.3.04/90b215f48fe42776c8c7f6e3509ec54e84fd65ef/xml-apis-1.3.04.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/agbr/.gradle/caches/modules-2/files-2.1/com.eclipsesource.j2v8/j2v8_linux_x86_64/4.6.0/e0168e46bfc13715d1b7b46504a8462754ed2f07/j2v8_linux_x86_64-4.6.0-sources.jar" kind="lib" path="/Users/agbr/.gradle/caches/modules-2/files-2.1/com.eclipsesource.j2v8/j2v8_linux_x86_64/4.6.0/e9714fbde87cf371071f6533824564e7499435fa/j2v8_linux_x86_64-4.6.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/agbr/.gradle/caches/modules-2/files-2.1/com.eclipsesource.j2v8/j2v8_win32_x86_64/4.6.0/8dbb6f4a125af8ed02927b0526900b356040dba9/j2v8_win32_x86_64-4.6.0-sources.jar" kind="lib" path="/Users/agbr/.gradle/caches/modules-2/files-2.1/com.eclipsesource.j2v8/j2v8_win32_x86_64/4.6.0/49e1cc812d34b6019d2cafc36c67cd599889b26b/j2v8_win32_x86_64-4.6.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/agbr/.gradle/caches/modules-2/files-2.1/com.eclipsesource.j2v8/j2v8_win32_x86/4.6.0/9a0d52d278d40ea29af831a3c96fb0b7497a8408/j2v8_win32_x86-4.6.0-sources.jar" kind="lib" path="/Users/agbr/.gradle/caches/modules-2/files-2.1/com.eclipsesource.j2v8/j2v8_win32_x86/4.6.0/6b3844b935145691edfb2c674371c783df0804ab/j2v8_win32_x86-4.6.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/Users/agbr/camel-cartago/examples/main_example/unresolved dependency - org.jacamo-lang camel-cartago 0.3.1">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value=""/>
+		</attributes>
+	</classpathentry>
+</classpath>

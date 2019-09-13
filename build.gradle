@@ -1,0 +1,99 @@
+defaultTasks 'publishToMavenLocal'
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'maven'
+apply plugin: 'maven-publish'
+
+version '0.1'
+group   'org.jacamo-lang'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+
+    maven { url "http://jacamo.sourceforge.net/maven2" }
+
+}
+
+dependencies {
+    compile group: 'org.jacamo', name: 'jacamo', version: '0.8'
+
+    compile group: 'org.apache.camel', name: 'camel-core', version: '2.22.1'
+    compile group: 'javax.xml', name: 'jaxb-api', version: '2.1'
+    compile group: 'org.springframework', name: 'spring-context', version: '5.0.10.RELEASE'
+
+}
+
+sourceSets {
+    main {
+        java {
+            srcDir 'src/main/java'
+        }
+        resources {
+            srcDir 'src/resources'
+        }
+    }
+}
+
+clean {
+    delete 'bin'
+    delete 'build'
+}
+
+task javadocJar (type: Jar, dependsOn: javadoc) {
+    baseName 'camel-jacamo'
+    classifier = 'javadoc'
+    //from '${docsDir}/../../doc/api'
+}
+
+task sourceJar (type : Jar) {
+    baseName 'camel-jacamo'
+    classifier = 'sources'
+    from sourceSets.main.allSource
+}
+
+artifacts {
+    archives sourceJar, javadocJar
+}
+
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            from components.java
+            artifactId 'camel-jacamo'
+            artifact sourceJar
+	          artifact javadocJar
+        }
+    }
+}
+
+task publishMavenGitHub(dependsOn: [ 'build', 'publishToMavenLocal']) {
+  doLast {
+    def wdir = System.getProperty("user.home")+'/.m2/repository/org/jacamo-lang/camel-jacamo'
+    def rdir = System.getProperty("user.home")+'/pro/jacamo-mvn-repo'
+    exec {
+        commandLine 'git', 'pull'
+        workingDir rdir
+    }
+    copy {
+        from wdir
+        into rdir + '/org/jacamo-lang/camel-jacamo'
+    }
+    exec {
+        commandLine 'git', 'add', '*'
+        workingDir rdir
+    }
+    exec {
+        commandLine 'git', 'commit', '-a', '-m', 'New version of camel-jacamo: '+project.version
+        workingDir rdir
+    }
+    exec {
+        commandLine 'git', 'push'
+        workingDir rdir
+    }
+  }
+}

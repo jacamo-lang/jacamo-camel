@@ -1,0 +1,19 @@
+<routes xmlns="http://camel.apache.org/schema/spring">
+    <route id="achieveAgent2">
+        <from uri="timer://foo?fixedRate=false&amp;period=5000"/>
+        <to uri='jacamo-agent:bob?performative=achieve&amp;content=say("Im from another route file")'/>
+    </route>
+
+    <route id="filterRoute">
+      <from uri="jacamo-agent:filterAgent?source=alice&amp;content=iShallPass&amp;performative=achieve"/>
+      <choice>
+        <when>
+          <simple>${body} contains "Shall"</simple>
+          <log message="This one is allowed to pass!"/>
+        </when>
+        <otherwise>
+          <log message="This one is not!"/>
+        </otherwise>
+      </choice>
+    </route>
+</routes>
