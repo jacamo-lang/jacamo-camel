@@ -4,17 +4,10 @@ DOCUMENTATION UNDER DEVELOPMENT!
 ```
 ## Overview
 This project contains an implementation of two custom Apache Camel components that gives Jason agents and CArtAgO artifact from a MAS JaCaMo project a way to communicate with other services.
-Apache Camel is a framework based on Enterprise Integration Patterns that aims to resolve  integration problems between components.
 
-Camel's approach gives systems an abstraction as a component to be accessed through *endpoints* that transmits messages encapsulated in *exchange objects*.
-When a component should send data, the developer establishes a *consumer* endpoint, that consumes the data and encapsulates it in an exchange object to be send. In the opposite flow, when a component must receive data, the former retrieves the latter sent as an exchange object with a *producer* endpoint, and then produces the data in a proper format to be used by the said component. The origin (consumer) and destinies (producers) endpoints are set in a camel *route*. Within a route, optional data manipulation can be defined as well. A graphical overview of this approach can be seen in the figure below.
-
-![Communication Flow](/images/CamelApproach.pdf?raw=true)
-
-To act according to camel's approach this project proposes two components, Jason Component gives MAS agents the perception of other services as other agents, and the ability to contact them by simply sending a message, with `.send` in JaCaMo.  
-The following image better represents the stated:
-
-![Communication Flow](/images/CommunicationFlow.pdf?raw=true)
+```
+If the reader is only interested in how to apply the components in a JaCaMo MAS, he/she may feel free to skip to the Usage section.
+```
 
 ### Table of contents
 1. [Getting Started](#getting-started)
@@ -27,6 +20,26 @@ The following image better represents the stated:
   * [Agent-only 'main'](#agent-only-'main')
   * [PostgreSQL](#postgresql)
   * [MQTT](#mqtt)
+
+Apache Camel is a framework based on Enterprise Integration Patterns that aims to resolve  integration problems between components.
+
+Camel's approach to integration issues gives systems an abstraction as a component to be accessed through *endpoints* that transmits messages encapsulated in *exchange objects*.
+When a component should send data, the developer establishes a *consumer* endpoint, that consumes the data and encapsulates it in an exchange object to be send. In the opposite flow, when a component must receive data, the former retrieves the latter sent as an exchange object with a *producer* endpoint, and then produces the data in a proper format to be used by the said component. The origin (consumer) and destinies (producers) endpoints are set in a camel *route*. Within a route, optional data manipulation can be defined as well. A graphical overview of this approach can be seen in the figure below.
+
+![Communication Flow](/images/CamelApproach.pdf?raw=true)
+
+The components provided by this project follows an important and clear fundament: **the integration shall not interfere in the MAS comprehension and development**. In essence, this means the developers of the MAS must not worry or change how they understand the system and uses it. In simple terms, if a JaCaMo agent interacts with the environment through action and perception, it **must** sustain this method when interacting with external systems integrated as environmental elements.
+
+In the following sections this document will present each component individually, its essence, caveats, and when they should be applied. Then, a usage section provides the user simple instructions on how to include and make use of the camel components in one's MAS. The next sections contains notes and explanations of application examples.
+
+## jacamo-agent
+
+
+## camel-artifact
+
+
+
+![Communication Flow](/images/CommunicationFlow.pdf?raw=true)
 
 
 ## Getting Started
