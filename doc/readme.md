@@ -28,6 +28,15 @@ The following image better represents the stated:
   * [PostgreSQL](#postgresql)
   * [MQTT](#mqtt)
 
+## jacamo-agent
+This component enables the modeling of external systems as internal agents to interact with other native agents. This means that native Jason agents will understand such external systems simply as another agents, and will be able to interact with them by sending and receiving ACL messages.
+Since the agents already communicated via `.send`, this behavior needed to be sustained. Such effect can be obtained by overriding the agents default architecture and routing the action `send` to camel routes if there is an endpoint to receive a message (i.e. a consumer).
+It is important to note that if the developer wishes to make a custom agent architecture, he/she must be careful when overriding the internal action.
+
+## jacamo-artifact
+This component enables the modeling of external systems as environmental CArtAgO artifacts to interact with other native agents. This means that native Jason agents will understand such external systems as native artifacts, and will be able to interact with them by observing properties, listening to signals, and acting over their operations.
+Since the agents already communicated via `.send`, this behavior needed to be sustained. Such effect can be obtained by overriding the agents default architecture and routing the action `send` to camel routes if there is an endpoint to receive a message (i.e. a consumer).
+It is important to note that if the developer wishes to make a custom agent architecture, he/she must be careful when overriding the internal action.
 
 ## Getting Started
 ### Prerequisites
