@@ -1,4 +1,4 @@
-# JaCaMo Component
+# Camel JaCaMo Component
 ```
 DOCUMENTATION UNDER DEVELOPMENT!
 ```
@@ -21,7 +21,7 @@ If the reader is only interested in how to apply the components in a JaCaMo MAS,
   * [PostgreSQL](#postgresql)
   * [MQTT](#mqtt)
 
-<<<<<<< HEAD
+
 Apache Camel is a framework based on Enterprise Integration Patterns that aims to resolve  integration problems between components.
 
 Camel's approach to integration issues gives systems an abstraction as a component to be accessed through *endpoints* that transmits messages encapsulated in *exchange objects*.
@@ -29,30 +29,21 @@ When a component should send data, the developer establishes a *consumer* endpoi
 
 ![Communication Flow](/images/CamelApproach.pdf?raw=true)
 
-The components provided by this project follows an important and clear fundament: **the integration shall not interfere in the MAS comprehension and development**. In essence, this means the developers of the MAS must not worry or change how they understand the system and uses it. In simple terms, if a JaCaMo agent interacts with the environment through action and perception, it **must** sustain this method when interacting with external systems integrated as environmental elements.
+The components provided by this project follows an important and clear fundament: **the integration shall not interfere in the MAS comprehension and development**. In essence, this means the developers of the MAS must not worry or change how they understand the MAS and uses it. Notwithstanding, the elements within the MAS must also maintain their intrinsic traits, in such way the integrated external entities should be understood as MAS elements - agents and artifacts.
+In simple terms, if a JaCaMo agent interacts with the environment through action and perception, it **must** sustain this method when interacting with external systems integrated as environmental elements.
 
 In the following sections this document will present each component individually, its essence, caveats, and when they should be applied. Then, a usage section provides the user simple instructions on how to include and make use of the camel components in one's MAS. The next sections contains notes and explanations of application examples.
-
-## jacamo-agent
-
-
-## camel-artifact
-
-
-
 ![Communication Flow](/images/CommunicationFlow.pdf?raw=true)
 
-=======
 ## jacamo-agent
 This component enables the modeling of external systems as internal agents to interact with other native agents. This means that native Jason agents will understand such external systems simply as another agents, and will be able to interact with them by sending and receiving ACL messages.
-Since the agents already communicated via `.send`, this behavior needed to be sustained. Such effect can be obtained by overriding the agents default architecture and routing the action `send` to camel routes if there is an endpoint to receive a message (i.e. a consumer).
+Since the agents already communicate with other agents with a `.send` action, this behavior need to be sustained when interacting with exogenous systems integrated as agents. Such effect can be obtained by overriding the agents default architecture and routing the action `send` to camel routes if there is an endpoint to receive a message (i.e. a consumer). On the opposite communication direction,
 It is important to note that if the developer wishes to make a custom agent architecture, he/she must be careful when overriding the internal action.
 
 ## jacamo-artifact
 This component enables the modeling of external systems as environmental CArtAgO artifacts to interact with other native agents. This means that native Jason agents will understand such external systems as native artifacts, and will be able to interact with them by observing properties, listening to signals, and acting over their operations.
-Since the agents already communicated via `.send`, this behavior needed to be sustained. Such effect can be obtained by overriding the agents default architecture and routing the action `send` to camel routes if there is an endpoint to receive a message (i.e. a consumer).
+In an analog way, since the agents already carry a specific behavior to interact with artifacts, it must be respected and followed. In this sense, agents must interact with external entities integrated as artifacts through operations, and shall perceive general data as observable properties and signals.
 It is important to note that if the developer wishes to make a custom agent architecture, he/she must be careful when overriding the internal action.
->>>>>>> b6f2f5f460a36d441bf01daa9dd8293acbb97ec6
 
 ## Getting Started
 ### Prerequisites
@@ -60,7 +51,7 @@ It is important to note that if the developer wishes to make a custom agent arch
 
 
 ### How to use
-1. Create a basic gradle build file and add the code below to it, or use the `buildSample.gradle` file and rename it to `build.gradle`.
+1. Create a basic gradle build file and add the code below to it, or use the `buildSample.gradle` file provided and rename it to `build.gradle`.
 
 ```
 repositories {
@@ -73,7 +64,7 @@ repositories {
 dependencies {
   compile 'org.jacamo:jacamo:0.8'
 
-  compile group: 'org.jacamo-lang',     name: 'camel-jason' ,   version: '1.0'
+  compile group: 'org.jacamo-lang',     name: 'jacamo-camel' ,   version: '1.0'
 
   compile group: 'org.apache.camel', name: 'camel-core', version: '2.22.1'
 
@@ -112,25 +103,37 @@ compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.13'
 </routes>
 ```
 
-Each file creates a context, so you can have parellel routes running.
-Check out the *Defining a context route* and *Examples* section for more.
+Each file creates a context, so you can have parallel routes running.
+Check out the *Defining a context route* and *Examples* section for more information.
 
 4. Add the following to your `.jcm` project:
 
 ```
-platform: jasonComponent.JasonCamel("routes-file-name.xml")
+platform: jacamoComponent.JacamoCamel("routes-file-name.xml")
 ```
 
-5. Run `gradle run` to start you `.jcm` with camel.
+When using multiple contexts, put each file as an argument of the platform, as in:
+
+```
+platform: jacamoComponent.JacamoCamel("context1.xml", "context2.xml")
+```
+
+5. Run the gradle task to start you `.jcm` with camel.
+
+If using the `buildSample.gradle` you may simple run the `gradle` command, and your `.jcm` should be named `main.jcm`.
+
+To check how to define your gradle task, look into the Gradle guides or explore a bit the `buildSample.gradle` file.
 
 ### Defining a context route
-The context is defined mainly using Camel's simple language for XML.
-Within the context, you can have many routes, defined by `<route> ... </route>`.
+The context is defined mainly using Camel's XML language.
+Within the context, you can have many routes, each within a `<route> ... </route>` element.
 
 Usually, in each route you have a consumer endpoint, denoted by "from", and one or more producer endpoints, denoted by "to".
 
 #### Producer endpoint
-The purpose of the producer is to generate messages to Jason agents.
+The purpose of the producer in each component is to:
+* jacamo-agent - 
+* jacamo-artifact - register an operation to an artifact
 When defining a producer endpoint you must use the following pattern:
 
 `<to uri=jacamo-agent:Agent?propertyOne=foo&propertyTwo=bar/>`
