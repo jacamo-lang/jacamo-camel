@@ -64,7 +64,7 @@ repositories {
 dependencies {
   compile 'org.jacamo:jacamo:0.8'
 
-  compile group: 'org.jacamo-lang',     name: 'jacamo-camel' ,   version: '1.0'
+  compile group: 'org.jacamo-lang',     name: 'camel-jacamo' ,   version: '0.1'
 
   compile group: 'org.apache.camel', name: 'camel-core', version: '2.22.1'
 
@@ -97,7 +97,7 @@ compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.13'
     </route>
 
     <route id="yourRouteIdTwo">
-        <from uri="jacamo-agent:myComponentName"/>
+        <from uri="jacamo-artifact:myArtifact"/>
         <to uri="myComponent:address"/>
     </route>
 </routes>
@@ -128,31 +128,153 @@ To check how to define your gradle task, look into the Gradle guides or explore 
 The context is defined mainly using Camel's XML language.
 Within the context, you can have many routes, each within a `<route> ... </route>` element.
 
-Usually, in each route you have a consumer endpoint, denoted by "from", and one or more producer endpoints, denoted by "to".
+Usually, in each route you have a consumer endpoint, denoted by `from`, and one or more producer endpoints, denoted by `to`. To each component, jacamo-agent and jacamo-artifact, each endpoint has a meaning and a way of defining it. In the next subsections, the endpoint meaning is explained, a pattern of constructing it is shown, and all the endpoint parameters are listed.
 
 #### Producer endpoint
-The purpose of the producer in each component is to:
-* jacamo-agent - 
+
+* jacamo-agent - indicate to which Jason agent the message will be sent;
+You can define this producer following the pattern:
+```
+<to uri=jacamo-agent:realAgentName?propertyOne=foo&propertyTwo=bar/>
+```
+<table class="tg">
+  <tr>
+    <th class="tg-baqh" colspan="3">**jacamo-agent Producer Endpoint**</th>
+  </tr>
+  <tr>
+    <td class="tg-0pky">Attribute's name</td>
+    <td class="tg-0pky">Default value</td>
+    <td class="tg-0pky">Description</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">performative</td>
+    <td class="tg-0pky">tell</td>
+    <td class="tg-0pky">the performative or illocutionary force, is the "purpose" of the message.<br>It can be: tell, untell, achieve, unachieve, askOne, askAll, tellHow, untellHow, askHow, signal;</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">source</td>
+    <td class="tg-0pky">camel</td>
+    <td class="tg-0pky">the origin of the message, the receiver agent will believe the "source" is another agent and might reply to it;</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">msgId</td>
+    <td class="tg-0pky">*auto generated*</td>
+    <td class="tg-0pky">an id to locate the message, mainly serves to send replies to messages with "askOne" and "askAll" performatives;</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">irt</td>
+    <td class="tg-0pky">*null*</td>
+    <td class="tg-0pky">a history of the replies to messages;</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">content</td>
+    <td class="tg-0pky">*null*</td>
+    <td class="tg-0pky">the message's body, it's really important to know the format of the content since agents may not receive it correctly.<br>The user should take care of handling well this element.</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax" colspan="3">Note: all the elements, despite having a default value, will give priority to the exchange's properties over the default value.<br>The priority order is as follow: user input &gt; exchange property &gt; default value.</td>
+  </tr>
+</table>
+
 * jacamo-artifact - register an operation to an artifact
-When defining a producer endpoint you must use the following pattern:
+You can define this producer following the pattern:
+```
+<to uri=jacamo-artifact:myArtifactName?propertyOne=foo&propertyTwo=bar/>
+```
+<table class="tg">
+  <tr>
+    <th class="tg-baqh" colspan="3">**jacamo-artifact Producer Endpoint**</th>
+  </tr>
+  <tr>
+    <td class="tg-0pky">Attribute's name</td>
+    <td class="tg-0pky">Default value</td>
+    <td class="tg-0pky">Description</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">property</td>
+    <td class="tg-0pky">*null*</td>
+    <td class="tg-0pky">the observable property or signal name and value (e.g. size(10), mailbox(bob, 3));</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">isSignal</td>
+    <td class="tg-0pky">true</td>
+    <td class="tg-0pky">flag to make the property persistent (observable property) or as a signal;</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax" colspan="3">Note: all the elements, despite having a default value, will give priority to the exchange's properties over the default value.<br>The priority order is as follow: URI definition &gt; exchange property &gt; default value.</td>
+  </tr>
+</table>
 
-`<to uri=jacamo-agent:Agent?propertyOne=foo&propertyTwo=bar/>`
-
-Where "Agent" is the agent's name (e.g. bob, alice), and "propertyOne" and "propertyTwo" are optional properties you can define to the message.
 
 #### Consumer endpoint
-The purpose of the producer is to receive messages that Jason agents tried to send to another component, believing it was an agent as well.
-Defining a consumer endpoint is analog, the difference being that the producer URI is the name of the other components' representative agent. I.e. to whom the Jason agents will send the messages.
-
+* jacamo-agent - indicate to which Jason agent the message will be sent;
+You can define this producer following the pattern:
 ```
-<from uri="jacamo-agent:Address?propertyOne=foo&propertyTwo=bar"/>
+<from uri=jacamo-agent:realAgentName?propertyOne=foo&propertyTwo=bar/>
 ```
+<table class="tg">
+  <tr>
+    <th class="tg-baqh" colspan="3">**jacamo-agent Consumer Endpoint**</th>
+  </tr>
+  <tr>
+    <td class="tg-0pky">Attribute's name</td>
+    <td class="tg-0pky">Default value</td>
+    <td class="tg-0pky">Description</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">performative</td>
+    <td class="tg-0pky">\*</td>
+    <td class="tg-0pky"> - </td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">source</td>
+    <td class="tg-0pky">\*</td>
+    <td class="tg-0pky"> - </td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">irt</td>
+    <td class="tg-0pky">\*</td>
+    <td class="tg-0pky"> - </td>
+  </tr>
+  <tr>
+    <td class="tg-0lax" colspan="3">Note: all the consumer's elements serve as a filter, so if the user writes `performative=tell&amp;source=jomi`, only the messages with "tell" as performative and "jomi" as source will be consumed.
+    Also, if you wish to filter the contents, you can easily use Camel's Simple language operator `contains` (e.g. `${body} contains "oi"` )</td>
+  </tr>
+</table>
 
-In this situation, Address is receivers name. Usually you just repeat the integrated component's name (e.g. `uri=jacamo-agent:MQTT`, `uri=jacamo-agent:REST`, ...)
 
-Also, the producer will **apply** the properties to the message, while the consumer will **filter** messages with certain properties.
+* jacamo-artifact - register an operation to an artifact
+You can define this producer following the pattern:
+```
+<from uri=jacamo-artifact:myArtifactName?propertyOne=foo&propertyTwo=bar/>
+```
+<table class="tg">
+  <tr>
+    <th class="tg-baqh" colspan="3">**jacamo-artifact Consumer Endpoint**</th>
+  </tr>
+  <tr>
+    <td class="tg-0pky">Attribute's name</td>
+    <td class="tg-0pky">Default value</td>
+    <td class="tg-0pky">Description</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">operation</td>
+    <td class="tg-0pky">*null*</td>
+    <td class="tg-0pky">the operation's name;</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">args</td>
+    <td class="tg-0pky">()</td>
+    <td class="tg-0pky">the operation argument's names, should always be within parenthesis and comma separated (e.g. args=(accountNumber, newValue) );</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">returns</td>
+    <td class="tg-0pky">()</td>
+    <td class="tg-0pky">the operation's expected return variables names, should always be within parenthesis and comma separated (e.g. args=(sumResult) ).;</td>
+  </tr>
+</table>
 
-#### Examples
+#### Example
 Let's say you want to deliver a message from component "phone" to agent "jomi". First of all you must be sure that "phone" is a valid camel component with its dependency imported in gradle. You can check Camel's official components [here](http://camel.apache.org/component-list-grouped.html).
 
 Then, you would define a route as follow:
@@ -239,85 +361,6 @@ If you try the following, it **WON'T** work:
 Since both consumers have the address "myPhone", one route would overwrite another.
 This also goes to different route files, you **should not** define the same consumer address in different routes, as only one will consume the message.
 
-#### Routes properties and configurations
-
-The producer might receive an exchange object to process with properties alrealdy defined, but it will always overwrite them if it was also declared in the URI, giving priority to the user.
-
-Here's a list of possible producer properties to be defined as a URI argument:
-
-<table class="tg">
-  <tr>
-    <th class="tg-baqh" colspan="3">**Producer Endpoint**</th>
-  </tr>
-  <tr>
-    <td class="tg-0pky">Attribute's name</td>
-    <td class="tg-0pky">Default value</td>
-    <td class="tg-0pky">Description</td>
-  </tr>
-  <tr>
-    <td class="tg-0pky">performative</td>
-    <td class="tg-0pky">tell</td>
-    <td class="tg-0pky">the performative or illocutionary force, is the "purpose" of the message.<br>It can be: tell, untell, achieve, unachieve, askOne, askAll, tellHow, untellHow, askHow;</td>
-  </tr>
-  <tr>
-    <td class="tg-0pky">source</td>
-    <td class="tg-0pky">camel</td>
-    <td class="tg-0pky">the origin of the message, the receiver agent will believe the "source" is another agent and might reply to it;</td>
-  </tr>
-  <tr>
-    <td class="tg-0pky">msgId</td>
-    <td class="tg-0pky">*auto generated*</td>
-    <td class="tg-0pky">an id to locate the message, mainly serves to send replies to messages with "askOne" and "askAll" performatives;</td>
-  </tr>
-  <tr>
-    <td class="tg-0pky">irt</td>
-    <td class="tg-0pky">*null*</td>
-    <td class="tg-0pky">a history of the replies to messages;</td>
-  </tr>
-  <tr>
-    <td class="tg-0pky">content</td>
-    <td class="tg-0pky">*null*</td>
-    <td class="tg-0pky">the message's body, it's really important to know the format of the content since agents may not receive it correctly.<br>The user should take care of handling well this element.</td>
-  </tr>
-  <tr>
-    <td class="tg-0lax" colspan="3">Note: all the elements, despite having a default value, will give priority to the exchange's properties over the default value.<br>The priority order is as follow: user input &gt; exchange property &gt; default value.</td>
-  </tr>
-</table>
-
-Here's also a list of possible consumer properties to be defined as a URI argument:
-
-<table class="tg">
-  <tr>
-    <th class="tg-baqh" colspan="3">**Consumer Endpoint**</th>
-  </tr>
-  <tr>
-    <td class="tg-0pky">Attribute's name</td>
-    <td class="tg-0pky">Default value</td>
-    <td class="tg-0pky">Description</td>
-  </tr>
-  <tr>
-    <td class="tg-0pky">performative</td>
-    <td class="tg-0pky">\*</td>
-    <td class="tg-0pky">-</td>
-  </tr>
-  <tr>
-    <td class="tg-0pky">source</td>
-    <td class="tg-0pky">\*</td>
-    <td class="tg-0pky">-</td>
-  </tr>
-  <tr>
-    <td class="tg-0pky">irt</td>
-    <td class="tg-0pky">\*</td>
-    <td class="tg-0pky">-</td>
-  </tr>
-  <tr>
-    <td class="tg-0lax" colspan="3">Note: all the consumer's elements serve as a filter, so if the user writes `performative=tell&amp;source=jomi`, only the messages with "tell" as performative and "jomi" as source will be consumed.
-    Also, if you wish to filter the contents, you can easily use Camel's Simple language operator `contains` (e.g. `${body} contains "oi"` )</td>
-  </tr>
-</table>
-
-For more examples check the *Examples* section down below.
-
 ### Using custom context configuration
 In Camel, you can also use custom configurations in your context. This asset is mainly used when defining Beans.
 If this resource is needed, you can create a context in another `.xml` file without routes, and adding ` --my-context-beans.xml` in the path you used for the routes.
@@ -375,7 +418,7 @@ Here's an example:
 
 If your run it, in your terminal you would expect the following:
 
-* Lots of creation and definition messages from [JasonCamel] and [    main]
+* Lots of creation and definition messages from [JacamoCamel] and [    main]
 
 
 * `[JasonConsumer] Message received: <mid1,alice,tell,myPhone,Message>` *<- The message was consumed.*
