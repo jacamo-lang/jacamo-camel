@@ -1,6 +1,6 @@
 package jacamoComponent;
 
-
+import java.util.ArrayList;
 import java.util.Map;
 import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
@@ -28,6 +28,7 @@ import jason.asSyntax.parser.ParseException;
 public class ArtifactConsumer extends DefaultConsumer {
 	private final ArtifactEndpoint endpoint;
 
+	private static ArrayList<String> artifactsNames = new ArrayList<String>();
 	private static Map<String, ArtifactConsumer> consumers = new HashMap<String, ArtifactConsumer>();
 	private final static Logger logger = Logger.getLogger(ArtifactConsumer.class.getName());
 
@@ -58,11 +59,13 @@ public class ArtifactConsumer extends DefaultConsumer {
 
 	public void start() throws Exception {
 		consumers.put(opName, this);
+		artifactsNames.add(artName);
 		super.start();
 	}
 
 	public void stop() throws Exception {
 		consumers.remove(opName, this);
+		artifactsNames.remove(artName);
 		super.stop();
 
 	}
@@ -175,6 +178,10 @@ public class ArtifactConsumer extends DefaultConsumer {
 
 	public void setReturnsString(String returnsString) {
 		this.returnsString = returnsString;
+	}
+
+	public static ArrayList<String> getArtifactsNames() {
+		return artifactsNames;
 	}
 
 }
