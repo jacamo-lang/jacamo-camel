@@ -43,6 +43,10 @@ public class CamelAgArch extends AgArch {
 	public void act(ActionExec a)  {
 		String functor = a.getActionTerm().getFunctor();
 		if(functor.equals("focus") && a.getActionTerm().getTerm(0)!=null) {
+			if(!ArtifactConsumer.getArtifactsNames().contains(a.getActionTerm().getTerm(0).toString())){
+				super.act(a);
+				return;
+			}
 			focusedArtifacts.add(a.getActionTerm().getTerm(0).toString());
 			a.setResult(true);
 			actionExecuted(a);
