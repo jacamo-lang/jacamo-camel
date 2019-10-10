@@ -3,7 +3,7 @@
 DOCUMENTATION UNDER DEVELOPMENT!
 ```
 ## Overview
-This project contains an implementation of two custom Apache Camel components that gives Jason agents and CArtAgO artifact from a MAS JaCaMo project a way to communicate with other services.
+This project contains an implementation of two custom Apache Camel components that provides a way for Jason agents from a MAS JaCaMo project to communicate with other services.
 
 ```
 If the reader is only interested in how to apply the components in a JaCaMo MAS, he/she may feel free to skip to the Usage section.
@@ -21,13 +21,29 @@ If the reader is only interested in how to apply the components in a JaCaMo MAS,
   * [PostgreSQL](#postgresql)
   * [MQTT](#mqtt)
 
+### Apache Camel Overview
 
-Apache Camel is a framework based on Enterprise Integration Patterns that aims to resolve  integration problems between components.
+Apache Camel is a framework based on Enterprise Integration Patterns that aims to resolve integration problems between different systems.
 
-Camel's approach to integration issues gives systems an abstraction as a component to be accessed through *endpoints* that transmits messages encapsulated in *exchange objects*.
-When a component should send data, the developer establishes a *consumer* endpoint, that consumes the data and encapsulates it in an exchange object to be send. In the opposite flow, when a component must receive data, the former retrieves the latter sent as an exchange object with a *producer* endpoint, and then produces the data in a proper format to be used by the said component. The origin (consumer) and destinies (producers) endpoints are set in a camel *route*. Within a route, optional data manipulation can be defined as well. A graphical overview of this approach can be seen in the figure below.
+Camel's approach to integration abstracts systems as camel *endpoints* which may receive, manipulate and send messages encapsulated in *exchange objects*. To make such abstraction, Camel makes use of *components*, which are individually developed to enable the mentioned actions over exchange objects to be made by a particular service. For instance, a camel component for Python shall provide a Python system the ability to translate data structures in exchange objects and vice-versa.
+When a service's component must send data, the developer implements a *consumer* endpoint, that consumes the data from the said service and encapsulates it in an exchange object to be send. In the opposite flow, when such service must receive data through its component, the developer implements a *producer* endpoint, which process the received exchanged object and produces the transmitted data in a proper structure to be used by the service.
+
+To configure data flows, camel *routes* are created. Such routes are not defined by the component's developer, but by the user. The user shall define the needed endpoints, its parameters (e.g. the address for a REST endpoint) and how the transmitted data must be manipulated. Multiple routes can be set. Each route sustains a consumer endpoint, where data must be retrieved from, and one or multiple producer endpoints, where the processed data must be sent to.
+
+The figure below shows graphically the concept and flow of data between components within a route.
 
 ![Communication Flow](/images/CamelApproach.pdf?raw=true)
+
+```
+The user of the hereby presented components must solely focus on how to define a route.
+```
+
+### This project
+
+As mentioned, the presented project is an implementation of two new camel components, which were developed to better integrate JaCaMo systems and agents with external services. Note that the view of an entity as external is from the MAS perspective, and this view shall be maintained throughout the whole document.
+
+The envisioned integration was thought also as a way of modeling exogenous entities as JaCaMo elements, agents or artifacts. In essence, this means that when integrating an external service, not only the service is to be accessed by JaCaMo agents, but to be perceived by the MAS as an internal entity, another Jason agent or CArtAgO artifact.
+As an example to better illustrate this, let's say an agent shall access a database, the said serviced could be integra
 
 The components provided by this project follows an important and clear fundament: **the integration shall not interfere in the MAS comprehension and development**. In essence, this means the developers of the MAS must not worry or change how they understand the MAS and uses it. Notwithstanding, the elements within the MAS must also maintain their intrinsic traits, in such way the integrated external entities should be understood as MAS elements - agents and artifacts.
 In simple terms, if a JaCaMo agent interacts with the environment through action and perception, it **must** sustain this method when interacting with external systems integrated as environmental elements.
