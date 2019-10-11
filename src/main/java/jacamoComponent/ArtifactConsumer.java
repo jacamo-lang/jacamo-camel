@@ -54,7 +54,7 @@ public class ArtifactConsumer extends DefaultConsumer {
 			this.returns = this.returnsString.substring(1, this.returnsString.length()-1).trim().replace(" ", "").split(",");
 		else
 			this.returns = new String[] {};
-		logger.setLevel(Level.INFO);
+		logger.setLevel(Level.FINE);
 	}
 
 	public void start() throws Exception {

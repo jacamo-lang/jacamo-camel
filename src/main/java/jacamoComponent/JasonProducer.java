@@ -24,7 +24,7 @@ public class JasonProducer extends DefaultProducer {
 	public JasonProducer(JasonEndpoint endpoint) {
 		super(endpoint);
 		this.endpoint = endpoint;
-		logger.setLevel(Level.INFO);
+		logger.setLevel(Level.FINE);
 	}
 
 	public void process(Exchange exchange) throws Exception {

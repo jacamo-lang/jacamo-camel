@@ -29,7 +29,7 @@ public class ArtifactEndpoint extends DefaultEndpoint {
 
 	public ArtifactEndpoint(String uri, ArtifactComponent component) {
 		super(uri, component);
-		logger.setLevel(Level.INFO);
+		logger.setLevel(Level.FINE);
 	}
 
 	public boolean isSingleton() {

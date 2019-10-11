@@ -29,7 +29,7 @@ public class JasonEndpoint extends DefaultEndpoint {
 
 	public JasonEndpoint(String uri, JasonComponent component) {
 		super(uri, component);
-		logger.setLevel(Level.INFO);
+		logger.setLevel(Level.FINE);
 	}
 
 	public boolean isSingleton() {

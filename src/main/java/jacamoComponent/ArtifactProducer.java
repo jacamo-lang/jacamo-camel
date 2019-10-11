@@ -36,7 +36,7 @@ public class ArtifactProducer extends DefaultProducer {
 		if(!endpoint.getIsSignal())
 			ArtifactProducer.observableProperties.putIfAbsent(artName, new ArrayList<Literal>());
 
-		logger.setLevel(Level.INFO);
+		logger.setLevel(Level.FINE);
 	}
 
 	public void process(Exchange exchange) throws Exception {

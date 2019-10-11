@@ -32,7 +32,7 @@ public class JasonConsumer extends DefaultConsumer {
 		this.endpoint = endpoint;
 		this.address = endpoint.getEndpointUri().split("\\?")[0].split("\\/")[2];
 		consumers.put(address, this);
-		logger.setLevel(Level.INFO);
+		logger.setLevel(Level.FINE);
 	}
 
 	public void start() throws Exception {

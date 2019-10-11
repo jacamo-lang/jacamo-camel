@@ -38,7 +38,7 @@ public class JacamoCamel extends DefaultPlatformImpl{
 	public void init(String[] args) throws Exception{
 		masProject = project;
 
-		logger.setLevel(Level.INFO);
+		logger.setLevel(Level.FINE);
 		List<AgentParameters> lags = new ArrayList<AgentParameters>();
 
 		BaseCentralisedMAS.getRunner().getRuntimeServices().registerDefaultAgArch(CamelAgArch.class.getName());

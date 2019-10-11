@@ -67,7 +67,7 @@ public class CamelAgArch extends AgArch {
 				actionExecuted(a);
 			}
 		}else {
-			System.out.println("No operation registered: "+a.getActionTerm().getFunctor());
+			// System.out.println("No operation registered: "+a.getActionTerm().getFunctor());
 			super.act(a);
 		}
 	}
