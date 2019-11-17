@@ -62,12 +62,20 @@ public class ArtifactProducer extends DefaultProducer {
 				}
 			}
 			ArtifactProducer.observableProperties.get(artName).add(property);
-		}else {
+			for(CamelAgArch arch: JacamoCamel.getArchList()) {
+				if(arch.hasFocusOn(artName)){
+					arch.wake();
+				}
+			}
+		} else {
 			Event signal = new Event(new Trigger(TEOperator.add, TEType.belief, property), new Intention());
 			updateMessage = "New signal: "+signal.getTrigger();
-			for(CamelAgArch arch: JacamoCamel.getArchList())
-				if(arch.hasFocusOn(artName))
+			for(CamelAgArch arch: JacamoCamel.getArchList()) {
+				if(arch.hasFocusOn(artName)){
 					arch.getTS().updateEvents(signal);
+					arch.wake();
+				}
+			}
 		}
 		logger.info(updateMessage);
 	}

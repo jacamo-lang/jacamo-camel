@@ -2,7 +2,11 @@ build
 
 # Compiled class file
 *.class
+.classpath
 /.gradle
+.project
+.settings
+bin
 
 # Log file
 *.log
