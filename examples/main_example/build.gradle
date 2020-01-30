@@ -30,17 +30,30 @@ repositories {
 
 dependencies {
   // ------------- component dependency -------------
+  // compile group: 'org.jacamo-lang',     name: 'camel-jacamo' ,   version: '0.1'
   compile fileTree(dir: 'libs', include: ['*.jar'])
 
   // ------------- main dependencies -------------
   compile 'org.jacamo:jacamo:0.8-SNAPSHOT'
 
-    implementation 'org.springframework.boot:spring-boot-starter-web'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    
-    implementation 'com.graphql-java:graphql-java-tools:5.2.4'
-	implementation 'com.graphql-java:graphql-spring-boot-starter:5.0.2'
-	implementation 'com.graphql-java:graphiql-spring-boot-starter:5.0.2'
+  // https://mvnrepository.com/artifact/org.apache.camel/camel-core
+  compile group: 'org.apache.camel', name: 'camel-core', version: '2.22.1'
+
+  // https://mvnrepository.com/artifact/org.springframework/spring-context
+  compile group: 'org.springframework', name: 'spring-context', version: '5.0.10.RELEASE'
+
+
+  // ------------- log dependencies -------------
+  // https://mvnrepository.com/artifact/org.slf4j/slf4j-log4j12
+  compile group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.25'
+
+  // https://mvnrepository.com/artifact/org.slf4j/slf4j-api
+  compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
+
+
+  // ------------- JDK 9+ dependencies -------------
+  // https://mvnrepository.com/artifact/javax.xml/jaxb-api
+  compile group: 'javax.xml', name: 'jaxb-api', version: '2.1'
 }
 
 sourceSets {

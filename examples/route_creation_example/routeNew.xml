@@ -1,0 +1,7 @@
+<routes xmlns="http://camel.apache.org/schema/spring">
+    <!-- tells agent bob to achieve !say("done") -->
+    <route id="achieveAgent">
+        <from uri="timer://foo?fixedRate=false&amp;period=5000"/>
+        <to uri='jason:bob?performative=achieve&amp;content=say("Im from a brand new created context route!")'/>
+    </route>
+</routes>

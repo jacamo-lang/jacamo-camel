@@ -1,0 +1,19 @@
+<routes xmlns="http://camel.apache.org/schema/spring">
+
+  <!-- <route id="timerTick">
+    <from uri="timer://foo?fixedRate=false&amp;period=500"/>
+    <to uri="jacamo-artifact:dummyArtifact?isSignal=true&amp;property=tick"/>
+  </route> -->
+
+  <route id="updateProperty">
+    <from uri="jacamo-artifact:dummyArtifact?operation=updateProp&amp;args=(Arg)"/>
+    <setBody><simple>val(${exchangeProperty[Arg]})</simple></setBody>
+    <to uri="jacamo-artifact:dummyArtifact"/>
+  </route>
+
+  <route id="call">
+    <from uri="jacamo-artifact:dummyArtifact?operation=callMe&amp;args=()&amp;returns=(Mensagem)"/>
+    <setHeader headerName="Mensagem"><simple>meuValorDeRetorno</simple></setHeader>
+    <to uri="jacamo-agent:alice?content=say(ok)"/>
+  </route>
+</routes>
