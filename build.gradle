@@ -5,7 +5,7 @@ apply plugin: 'eclipse'
 apply plugin: 'maven'
 apply plugin: 'maven-publish'
 
-version '0.2'
+version '0.1'
 group   'org.jacamo-lang'
 
 sourceCompatibility = 1.8
@@ -21,10 +21,12 @@ repositories {
 dependencies {
     compile group: 'org.jacamo', name: 'jacamo', version: '0.8'
 
-    compile group: 'org.apache.camel', name: 'camel-core', version: '2.22.1'
-    compile group: 'javax.xml', name: 'jaxb-api', version: '2.1'
-    compile group: 'org.springframework', name: 'spring-context', version: '5.0.10.RELEASE'
+	// implementation 'org.springframework.boot:spring-boot-starter-web'
+	// testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
+	implementation 'com.graphql-java:graphql-java-tools:5.2.4'
+	implementation 'com.graphql-java:graphql-spring-boot-starter:5.0.2'
+	implementation 'com.graphql-java:graphiql-spring-boot-starter:5.0.2'
 }
 
 sourceSets {
@@ -44,13 +46,13 @@ clean {
 }
 
 task javadocJar (type: Jar, dependsOn: javadoc) {
-    baseName 'camel-jacamo'
+    baseName 'jacamo-graphql'
     classifier = 'javadoc'
     //from '${docsDir}/../../doc/api'
 }
 
 task sourceJar (type : Jar) {
-    baseName 'camel-jacamo'
+    baseName 'jacamo-graphql'
     classifier = 'sources'
     from sourceSets.main.allSource
 }
@@ -64,7 +66,7 @@ publishing {
     publications {
         maven(MavenPublication) {
             from components.java
-            artifactId 'camel-jacamo'
+            artifactId 'jacamo-graphql'
             artifact sourceJar
 	          artifact javadocJar
         }
@@ -73,7 +75,7 @@ publishing {
 
 task publishMavenGitHub(dependsOn: [ 'build', 'publishToMavenLocal']) {
   doLast {
-    def wdir = System.getProperty("user.home")+'/.m2/repository/org/jacamo-lang/camel-jacamo'
+    def wdir = System.getProperty("user.home")+'/.m2/repository/org/jacamo-lang/jacamo-graphql'
     def rdir = System.getProperty("user.home")+'/mavenpro/jacamo-mvn-repo'
     exec {
         commandLine 'git', 'pull'
@@ -81,14 +83,14 @@ task publishMavenGitHub(dependsOn: [ 'build', 'publishToMavenLocal']) {
     }
     copy {
         from wdir
-        into rdir + '/org/jacamo-lang/camel-jacamo'
+        into rdir + '/org/jacamo-lang/jacamo-graphql'
     }
     exec {
         commandLine 'git', 'add', '*'
         workingDir rdir
     }
     exec {
-        commandLine 'git', 'commit', '-a', '-m', 'New version of camel-jacamo: '+project.version
+        commandLine 'git', 'commit', '-a', '-m', 'New version of jacamo-graphql: '+project.version
         workingDir rdir
     }
     exec {

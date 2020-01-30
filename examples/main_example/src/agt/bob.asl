@@ -1,32 +1,8 @@
 !start.
 
 +!start
-   <- .print("Started.");
-      .send(filterAgent, achieve, iShallPass);
+   <- .print("Bob started.");
    .
-
-+message(X)[source(S)]
-  :   	true
-  <-  	.print("Received message ", X, ", from ", S, ". Replying.");
-  		  .send(S, tell, message(X));
-  .
-
-+!say(X)
-  :     true
-  <-    .print(X);
-  .
-
-+!create(X)
-  :     true
-  <-    .print("Creating a new context");
-        jacamoComponent.createContext(X);
-  .
-
-+!dispose(X)
-  :     true
-  <-    .print("Disposing a new context");
-        jacamoComponent.disposeContext(X);
-  .
 
 { include("$jacamoJar/templates/common-cartago.asl") }
 { include("$jacamoJar/templates/common-moise.asl") }

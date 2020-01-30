@@ -14,10 +14,12 @@
 
 mas plat {
 
-    agent marcos
     agent bob
-    agent alice
 
-    platform: jacamoComponent.JacamoCamel("routeMain.xml", "routeMain2.xml")
+    workspace sala {
+        
+    }
+
+    platform: jacamoql.GraphqlPlatform()
 
 }
