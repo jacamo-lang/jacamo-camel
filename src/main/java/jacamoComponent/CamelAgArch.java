@@ -20,7 +20,7 @@ public class CamelAgArch extends AgArch {
 
 	@Override
 	public void init() throws Exception {
-		focusedArtifacts = new ArrayList<String>();
+		focusedArtifacts = new ArrayList<>();
 		JacamoCamel.insertArchList(this);
 	}
 
@@ -28,7 +28,7 @@ public class CamelAgArch extends AgArch {
 	public Collection<Literal> perceive(){
 		Collection<Literal> perceptions = super.perceive();
 		if(perceptions == null)
-			perceptions = new ArrayList<Literal>();
+			perceptions = new ArrayList<>();
 
 		for(String artifact: focusedArtifacts) {
 			Collection<Literal> percepts = ArtifactProducer.getObservableProperties().get(artifact);
