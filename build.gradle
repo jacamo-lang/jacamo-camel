@@ -5,7 +5,7 @@ apply plugin: 'eclipse'
 apply plugin: 'maven'
 apply plugin: 'maven-publish'
 
-version '0.3'
+version '0.4-SNAPSHOT'
 group   'org.jacamo'
 
 sourceCompatibility = 1.8
@@ -74,7 +74,7 @@ publishing {
 task publishMavenGitHub(dependsOn: [ 'build', 'publishToMavenLocal']) {
   doLast {
     def wdir = System.getProperty("user.home")+'/.m2/repository/org/jacamo/jacamo-camel'
-    def rdir = System.getProperty("user.home")+'/mavenpro/jacamo-mvn-repo'
+    def rdir = System.getProperty("user.home")+'/pro/jacamo-mvn-repo'
     exec {
         commandLine 'git', 'pull'
         workingDir rdir

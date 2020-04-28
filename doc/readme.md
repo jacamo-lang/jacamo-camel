@@ -80,7 +80,7 @@ repositories {
 dependencies {
   compile 'org.jacamo:jacamo:0.8'
 
-  compile group: 'org.jacamo-lang',     name: 'camel-jacamo' ,   version: '0.1'
+  compile group: 'org.jacamo',     name: 'jacamo-camel' ,   version: '0.3'
 
   compile group: 'org.apache.camel', name: 'camel-core', version: '2.22.1'
 

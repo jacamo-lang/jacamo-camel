@@ -68,7 +68,7 @@ public class ArtifactProducer extends DefaultProducer {
 				}
 			}
 		} else {
-			Event signal = new Event(new Trigger(TEOperator.add, TEType.belief, property), new Intention());
+			Event signal = new Event(new Trigger(TEOperator.add, TEType.belief, property), null);
 			updateMessage = "New signal: "+signal.getTrigger();
 			for(CamelAgArch arch: JacamoCamel.getArchList()) {
 				if(arch.hasFocusOn(artName)){
