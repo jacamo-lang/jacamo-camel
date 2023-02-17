@@ -19,40 +19,36 @@ targetCompatibility = 1.8
 repositories {
     mavenCentral()
 
-    maven { url "http://jacamo.sourceforge.net/maven2" }
-    maven { url "http://jade.tilab.com/maven/" }
     maven { url "https://raw.github.com/jacamo-lang/mvn-repo/master" }
-
-    flatDir {
-       dirs 'lib'
-    }
+    maven { url "http://jacamo.sourceforge.net/maven2" }
 }
 
 dependencies {
   // ------------- component dependencies -------------
-  compile fileTree(dir: 'libs', include: ['*.jar'])
+  implementation 'org.jacamo:jacamo-camel:0.4-SNAPSHOT'
+  // compile fileTree(dir: 'libs', include: ['*.jar'])
 
   // ------------- main dependencies -------------
-  compile 'org.jacamo:jacamo:0.8-SNAPSHOT'
+  implementation 'org.jacamo:jacamo:0.8-SNAPSHOT'
 
   // https://mvnrepository.com/artifact/org.apache.camel/camel-core
-  compile group: 'org.apache.camel', name: 'camel-core', version: '2.22.1'
+  implementation group: 'org.apache.camel', name: 'camel-core', version: '2.22.1'
 
   // https://mvnrepository.com/artifact/org.springframework/spring-context
-  compile group: 'org.springframework', name: 'spring-context', version: '5.0.10.RELEASE'
+  implementation group: 'org.springframework', name: 'spring-context', version: '5.0.10.RELEASE'
 
 
   // ------------- log dependencies -------------
   // https://mvnrepository.com/artifact/org.slf4j/slf4j-log4j12
-  compile group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.25'
+  implementation group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.25'
 
   // https://mvnrepository.com/artifact/org.slf4j/slf4j-api
-  compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
+  implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
 
 
   // ------------- JDK 9+ dependencies -------------
   // https://mvnrepository.com/artifact/javax.xml/jaxb-api
-  compile group: 'javax.xml', name: 'jaxb-api', version: '2.1'
+  implementation group: 'javax.xml', name: 'jaxb-api', version: '2.1'
 }
 
 sourceSets {

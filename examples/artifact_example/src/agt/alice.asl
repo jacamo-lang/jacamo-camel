@@ -8,7 +8,7 @@ counter(0).
       callMe(X);
       .print("Unifyed X with", X)
       callMe(myReturnValue);
-      callMe(myOtherValue);
+      //callMe(myOtherValue);
   .
 
 +!updateCycle
